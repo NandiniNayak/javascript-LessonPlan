@@ -1,0 +1,32 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+        // long running normal function
+        function waitThreeSeconds() {
+            var ms = 3000 + new Date().getTime();
+            while (new Date() < ms){
+              // do nothing
+            }
+            console.log('normal timer function done: click event cannot be responded during a long running js function ');
+        }
+        function clickHandler() {
+            console.log('click event!');
+        }
+        // listen for the click event
+        document.addEventListener('click', clickHandler);
+        waitThreeSeconds();  // normal function
+        console.log('finished execution');
+
+        // but if a wait timer is scheduled in a callback then click event gets executed while waiting for the timer callback to finish
+        setTimeout(function timeout() {
+          console.log("callback timer function done: click event can be responded while waiting for the callback to be completed");
+        }, 3000);
+        // run this code and click while long running function is executing: notice, click event gets registered only after finishing the js code. hence long runnning function cannot be interrupted, while events occur.
+        // However a long running event created as a callback can be interrupted by event loop functions
+        // This is how js deals with async events, anything happening ouside of JE in browser is stored in Event que in JE
+
+        // VVVVI : hence if a long running function is code in js instead of a call back it halts the program execution
+        </script>
+    </body>
+</html>

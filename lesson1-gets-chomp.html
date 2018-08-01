@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>gets chomp in js browser</title>
+    <script>
+        var name = prompt("What is your name!")
+        console.log("Hello " + name );
+
+        // note: unlike, terminal prompt blocks io port as there is no callback function
+        console.log("Does not execute until prompt is completed, unlike process.stdin.read() in node server");
+
+        setTimeout(function(){
+           console.log("Hello after 3 seconds");
+         }, 3000);
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

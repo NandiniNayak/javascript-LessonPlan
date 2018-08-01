@@ -1,0 +1,25 @@
+<html>
+  <head>
+
+  </head>
+  <body>
+    <script>
+    console.log('The current battery information is:');
+    console.log(navigator.getBattery().then(function(result){
+      console.log(result)
+    }).catch(function (error) {
+        console.log("Something went wrong!")
+  }))
+
+  // here fetch is a promise variable, which has two responses from Promise, based on resolve (success) and reject, which could be used in then and catch functions
+  // turn off wifi and try should trigger a catch
+
+    fetch('https://randomuser.me/api/')
+    .then(function (response) {
+      console.log(Everything worked);
+    }).catch(function (error) {
+      console.log('Something went wrong!');
+    })
+    </script>
+  </body>
+</html>
