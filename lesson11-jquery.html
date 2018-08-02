@@ -1,0 +1,30 @@
+<html>
+  <head>
+        <!-- jquery minified cdn -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous">
+
+        // page content created from jquery
+        $("document").ready(function(){
+          $("#content").append("<p>").append("loading content with jquery");
+        });
+
+        // page content created without jquery
+        document.addEventListener("DOMContentLoaded", function(){
+            var elem = document.querySelector("#content");
+            var para = document.createElement("p");
+            var text = document.createTextNode("loading content without jquery");
+            para.appendChild(text);
+            elem.appendChild(para);
+          });
+          // Note: page loads faster without jquery. whyy??
+    </script>
+  </head>
+  <body>
+    <div id="content">
+
+    </div>
+  </body>
+</html>
