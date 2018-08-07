@@ -1,38 +1,37 @@
 // ########################### pseudo class ###########################
 
-// function Dog(name,location){
-//   this.name = name
-//   this.location = location
-//   // static welcome() {
-//   //   console.log("hello")
-//   // }
-//
-//   // static methods are not allowed in functions, hence function methods are accessible only through instance methods
-// }
-//
-//
-// Dog.prototype.speak = function(){
-//   console.log(`whoof my name is ${this.name} and I am from ${this.location}`);
-//   console.log(this);
-// }
-//
-// Dog.prototype.setLocation = function(location){
-//   this.location = location;
-// }
-// Dog.prototype.speak();  // this variable refers to corresponding function Dog
-//
-// Dog.speak(); // not allowed throws and error cannot access its functions directly, access only through instance
-//
-// dog1 = new Dog("tommy", "sydney");
-// dog1.speak();
-// dog1.setLocation("melbourne");
-// dog1.speak();  // this variable refers to dog1 object
-//
+function Dog(name,location){
+  this.name = name
+  this.location = location
+//   static welcome() {
+//     console.log("hello")
+//   }
+  // static methods are not allowed in functions, hence function methods are accessible only through instance methods
+}
 
-// dog2 = new Dog("Harry", "Cationanberra");
-// dog2.speak();
-// dog2.setLocation("Perth");
-// dog2.speak();  //this refers to dog2 object
+
+Dog.prototype.speak = function(){
+  console.log(`whoof my name is ${this.name} and I am from ${this.location}`);
+  console.log(this);
+}
+
+Dog.prototype.setLocation = function(location){
+  this.location = location;
+}
+Dog.prototype.speak();  // this variable refers to corresponding function Dog
+
+Dog.speak(); // not allowed throws and error cannot access its functions directly, access only through instance
+
+dog1 = new Dog("tommy", "sydney");
+dog1.speak();
+dog1.setLocation("melbourne");
+dog1.speak();  // this variable refers to dog1 object
+
+
+dog2 = new Dog("Harry", "Cationanberra");
+dog2.speak();
+dog2.setLocation("Perth");
+dog2.speak();  //this refers to dog2 object
 
 // ########################### ES6 class ###########################
 var dogCount = 0;
