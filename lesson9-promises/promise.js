@@ -1,5 +1,4 @@
 /* ##################################################################
- promise example - code syntax: find out how is it different from events and callbacks?? (to be done)
  summary: promises are used to handle the callback hell(nested call backs errors and success).
  promise provides two methods, resolve and reject, based on the result of the function. if resolve, then proceed further with then method, if reject, throw error or catch using catch method
  success results can be chained.
